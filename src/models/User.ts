@@ -2,30 +2,20 @@ import { Model, DataTypes } from 'sequelize';
 import { sequelize } from '../instances/pg';
 
 export interface TodoInstance extends Model {
-    id: number;
-    title: string;
-    done: boolean;
     user_id: number;
+    user_name: string;
 }
 
 export const Todo = sequelize.define<TodoInstance>('Todo', {
-    id: {
+    user_id: {
         primaryKey: true,
         autoIncrement: true,
         type: DataTypes.INTEGER
     },
-    title: {
+    user_name: {
         type: DataTypes.STRING,
     },
-    done: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: false
-    },
-    user_id: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: false
-    },
 }, {
-    tableName: 'todos',
+    tableName: 'users',
     timestamps: false
 });

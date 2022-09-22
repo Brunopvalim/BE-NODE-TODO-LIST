@@ -48,7 +48,7 @@ export const update = async(req: Request, res: Response) => {
         } else {
             res.json({ error: "Item not found!" })
         }
-
+    
 }
 
 export const remove = async(req: Request, res: Response) => {
