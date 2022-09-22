@@ -6,7 +6,7 @@ export interface UserInstance extends Model {
     user_name: string;
 }
 
-export const Todo = sequelize.define<UserInstance>('Todo', {
+export const User = sequelize.define<UserInstance>('User', {
     user_id: {
         primaryKey: true,
         autoIncrement: true,
