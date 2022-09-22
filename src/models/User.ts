@@ -1,12 +1,12 @@
 import { Model, DataTypes } from 'sequelize';
 import { sequelize } from '../instances/pg';
 
-export interface TodoInstance extends Model {
+export interface UserInstance extends Model {
     user_id: number;
     user_name: string;
 }
 
-export const Todo = sequelize.define<TodoInstance>('Todo', {
+export const Todo = sequelize.define<UserInstance>('Todo', {
     user_id: {
         primaryKey: true,
         autoIncrement: true,
