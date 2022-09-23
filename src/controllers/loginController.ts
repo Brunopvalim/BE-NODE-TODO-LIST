@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { User } from '../models/User';
 
+// Register a user
 export const register = async (req: Request, res: Response) => {
     if (req.body.email && req.body.password) {
         let { email, password } = req.body;
@@ -19,6 +20,7 @@ export const register = async (req: Request, res: Response) => {
     res.json({ error: 'Please enter your credentials.' });
 }
 
+// Login user
 export const login = async (req: Request, res: Response) => {
     if (req.body.email && req.body.password) {
         let email: string = req.body.email;

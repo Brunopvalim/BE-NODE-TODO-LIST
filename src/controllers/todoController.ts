@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { Todo } from '../models/Todo';
 
 
+// TODO: List all the tasks
 export const all = async (req: Request, res: Response) => {
     const list = await Todo.findAll();
     if (list) {
@@ -11,12 +12,13 @@ export const all = async (req: Request, res: Response) => {
     }
 }
 
+// TODO: List query tasks
 export const find = async (req: Request, res: Response) => {
-    let searchTerm: string = req.body.query;
+    let searchTerm = req.body.query;
     const list = await Todo.findAll({
         limit: 10,
         where: {
-            title: '%' + searchTerm + '%'
+            title: '%' + searchTerm.title + '%'
         }
     });
 
