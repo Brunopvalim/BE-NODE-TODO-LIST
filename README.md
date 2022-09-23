@@ -8,7 +8,7 @@ The application is able to do the following:
 Enjoy!
 
 RUNNING THE APP:
-  For npm the default package manager, run the following commands to install all dependencies.
+  For npm the default package manager, run the following commands to install the app.
 
     NPM INSTALL
     NPM RUN START-DEV
