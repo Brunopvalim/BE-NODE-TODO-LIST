@@ -3,7 +3,8 @@ import { sequelize } from '../instances/pg';
 
 export interface UserInstance extends Model {
     user_id: number;
-    user_name: string;
+    username: string;
+    password: string;
 }
 
 export const User = sequelize.define<UserInstance>('User', {
@@ -12,7 +13,10 @@ export const User = sequelize.define<UserInstance>('User', {
         autoIncrement: true,
         type: DataTypes.INTEGER
     },
-    user_name: {
+    username: {
+        type: DataTypes.STRING,
+    },
+    password: {
         type: DataTypes.STRING,
     },
 }, {

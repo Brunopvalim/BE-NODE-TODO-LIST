@@ -5,7 +5,7 @@ export interface TodoInstance extends Model {
     id: number;
     title: string;
     done: boolean;
-    user_id: number;
+    owner: string;
 }
 
 export const Todo = sequelize.define<TodoInstance>('Todo', {
@@ -21,8 +21,8 @@ export const Todo = sequelize.define<TodoInstance>('Todo', {
         type: DataTypes.BOOLEAN,
         defaultValue: false
     },
-    user_id: {
-        type: DataTypes.BOOLEAN,
+    owner: {
+        type: DataTypes.STRING,
         defaultValue: false
     },
 }, {
