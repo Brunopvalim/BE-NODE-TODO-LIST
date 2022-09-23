@@ -1,11 +1,15 @@
 import { Request, Response } from 'express';
 import { User } from '../models/User';
 
-// Register a user
+// Register User
 export const register = async (req: Request, res: Response) => {
+    // Verify if credential were provided
     if (req.body.email && req.body.password) {
+        
+        // Request GET params
         let { email, password } = req.body;
 
+        // Check if User is already registered, otherwise create a new user
         let hasUser = await User.findOne({ where: { email } });
         if (!hasUser) {
             let newUser = await User.create({ email, password });
@@ -16,16 +20,20 @@ export const register = async (req: Request, res: Response) => {
             res.json({ error: 'E-mail already exists.' });
         }
     }
-
+    // Error handler
     res.json({ error: 'Please enter your credentials.' });
 }
 
-// Login user
+// User Login
 export const login = async (req: Request, res: Response) => {
+    // Verify if credential were provided
     if (req.body.email && req.body.password) {
+        
+        // Setting user information
         let email: string = req.body.email;
         let password: string = req.body.password;
 
+        // Checks if the user exists in the database, otherwise return false
         let user = await User.findOne({
             where: { email, password }
         });

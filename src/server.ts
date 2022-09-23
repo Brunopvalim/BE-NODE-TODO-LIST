@@ -19,7 +19,7 @@ server.use(express.urlencoded({ extended: true }));
 // Routes
 server.use(apiRoutes);
 
-// Checking endpoints
+// Validating endpoints
 server.use((req: Request, res: Response) => {
     res.status(404); // Not Found
     res.json({ error: 'Endpoint not found.' });

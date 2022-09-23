@@ -12,7 +12,7 @@ export const all = async (req: Request, res: Response) => {
     }
 }
 
-// TODO: List query tasks
+// TODO: List query task
 export const find = async (req: Request, res: Response) => {
     let searchTerm = req.body.query;
     const list = await Todo.findAll({
