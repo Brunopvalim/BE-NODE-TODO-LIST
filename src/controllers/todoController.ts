@@ -29,6 +29,7 @@ export const find = async (req: Request, res: Response) => {
     }
 }
 
+// TODO: Add tasks to the list
 export const add = async (req: Request, res: Response) => {
     if (req.body.title) {
         let newTodo = await Todo.create({
@@ -44,6 +45,7 @@ export const add = async (req: Request, res: Response) => {
     }
 }
 
+// TODO: Update required task
 export const update = async (req: Request, res: Response) => {
     const id: string = req.params.id;
     const email: string = req.body.email;
@@ -77,6 +79,7 @@ export const update = async (req: Request, res: Response) => {
     }
 }
 
+// TODO: Delete required task
 export const remove = async (req: Request, res: Response) => {
     let id: string = req.params.id;
 

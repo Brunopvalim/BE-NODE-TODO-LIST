@@ -1,6 +1,7 @@
 import { Model, DataTypes } from 'sequelize';
 import { sequelize } from '../instances/pg';
 
+// User interface
 export interface TodoInstance extends Model {
     id: number;
     title: string;
@@ -8,6 +9,7 @@ export interface TodoInstance extends Model {
     owner: string;
 }
 
+// User Instance properties
 export const Todo = sequelize.define<TodoInstance>('Todo', {
     id: {
         primaryKey: true,
